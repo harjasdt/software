@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block one %}
+<style>
+  body{
+    
+    margin:auto;
+    text-align:center important;
+    background-color:#132D46;
+    color:white;
+  }
+</style>
+
+
+{% for i in page_obj %}
+{{ i.NAME }}<br>
+{% endfor %}
+{% endblock one %}

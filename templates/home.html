@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block one %}
+{% if user.is_authenticated %}
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+{% endif %}
+<style>
+  body{
+
+    margin:auto;
+    background-color:#132D46;
+    color:white;
+  }
+  .back{
+    position:absolute;
+    left:20px;
+  }
+  form{
+    width:50%;
+    margin-left:25%;
+  }
+  .card{
+    background-color:#132D46;
+    border:2px solid;
+    text-align:center;
+    margin-top:15px;
+  }
+  .log{
+    float:right;
+  }
+</style>
+<a  class="log" href="{% url 'no_more_work' %}" ><button type="button" class="btn btn-light">Logout</button></a>
+
+<h1 class="text-center"> {{ user.username }}'s All Classes</h1><br>
+
+
+<div class="container">
+  <div class='row'>
+
+    <div class='col'>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">Class A</p>
+          <a href="#" class="btn btn-light btn-small">View Attendance</a>
+        </div>
+      </div>      
+    </div>
+
+    <div class='col'>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">Class B</p>
+          <a href="#" class="btn btn-light btn-small">View Attendance</a>
+        </div>
+      </div>      
+    </div>
+
+    <div class='col'>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">Class C</p>
+          <a href="#" class="btn btn-light btn-small">View Attendance</a>
+        </div>
+      </div>      
+    </div>
+
+    <div class='col'>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-text">Class D</p>
+          <a href="#" class="btn btn-light btn-small">View Attendance</a>
+        </div>
+      </div>      
+    </div>
+
+  </div>
+</div>
+
+{% else %}
+<h3>You must be Logged-in </h3>
+{% endif %}
+{% endblock one %}
